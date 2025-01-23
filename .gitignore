@@ -1,0 +1,57 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Environment variables
+.env
+.env.*
+
+# Django migrations
+migrations/
+
+# Test coverage reports
+coverage.xml
+*.cover
+*.hypothesis/
+*.tox/
+
+# Backup files
+*~
+*.bak
+*.swp
+
+# Virtualenv
+venv/
+.env/
+
+# Docker files
+docker-compose.override.yml
+
+# Jupyter Notebook files
+.ipynb_checkpoints
+
+# Django Secret Key file
+secret_key.txt
+
+# Node.js dependencies (if you use npm/yarn for front-end development)
+node_modules/
+
+# NPM/Yarn lock files (if applicable)
+yarn.lock
+package-lock.json
