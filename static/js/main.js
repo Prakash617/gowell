@@ -20,8 +20,8 @@
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
             $('.navbar').addClass('sticky-top shadow-sm bg-white');
-            $('.logo_text h1').addClass('text-dark'); // Change main logo text to black
-            $('.logo_text p').addClass('text-dark'); // Change the smaller text to black
+            $('.logo_text h1').css('color', '#06A3DA'); // Change main logo text color
+            $('.logo_text p').css('color', '#06A3DA'); // Change the smaller text color
         } else {
             $('.navbar').removeClass('sticky-top shadow-sm bg-white');
             $('.logo_text h1').removeClass('text-dark'); // Revert main logo text color

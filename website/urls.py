@@ -20,4 +20,14 @@ from .views import *
 
 urlpatterns = [
     path('', home, name = 'home'),
+    path('about/', about, name='about'),
+    path('services/', services, name='services'),
+    path('blog-grid/', blog_grid, name='blog-grid'),
+    path('blog-detail/', blog_detail, name='blog-detail'),
+    path('pricing/', pricing, name='pricing'),
+    path('features/', features, name='features'),
+    path('team/', team, name='team'),
+    path('testimonials/', testimonials, name='testimonials'),
+    path('quote/', quote, name='quote'),
+    path('contact/', contact, name='contact'),
 ]

@@ -6,6 +6,9 @@
     --dark: #091E3E;
 }
 
+.logo_text {
+    color: var(--primary);
+}
 
 /*** Spinner ***/
 .spinner {
