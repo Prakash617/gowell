@@ -9,7 +9,7 @@ __pycache__/
 *.pyc
 *.sqlite3
 db.sqlite3
-media/
+# media/
 staticfiles/
 
 # VS Code settings
