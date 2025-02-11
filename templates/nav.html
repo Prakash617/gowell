@@ -20,6 +20,7 @@
             <a href="{% url 'home' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
             <a href="{% url 'about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
             <a href="{% url 'services' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
+            <a href="{% url 'teams' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'teams' %}active{% endif %}">Teams</a>
             <!-- Uncomment and update these dropdowns if needed -->
             {% comment %}
             <div class="nav-item dropdown">

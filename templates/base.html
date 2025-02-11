@@ -38,76 +38,81 @@
         <div class="spinner"></div>
     </div>
     <!-- Spinner End -->
-         <!-- Topbar Start -->
+
+    <!-- Topbar Start -->
     <div class="container-fluid bg-dark px-5 d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i><a href="https://maps.app.goo.gl/YvtJk5wYshdgkb5q7" class='text-light' target="_blank" rel="noopener">Nepal, Lamahi-5, Dang</a></small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i><a href="tel:+9779845293203" class='text-light'>082-540930</a></small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@gowell.edu.np</small>
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>{{ company.address }}</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i><a href="tel:{{ company.phone }}" class='text-light'>{{ company.phone }}</a></small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>{{ company.email }}</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                    {% if company.twitter %}
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.twitter }}" target="_blank"><i class="fab fa-twitter fw-normal"></i></a>
+                    {% endif %}
+                    {% if company.facebook %}
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.facebook }}" target="_blank"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    {% endif %}
+                    {% if company.linkedin %}
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.linkedin }}" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    {% endif %}
+                    {% if company.instagram %}
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.instagram }}" target="_blank"><i class="fab fa-instagram fw-normal"></i></a>
+                    {% endif %}
+                    {% if company.youtube %}
+                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="{{ company.youtube }}" target="_blank"><i class="fab fa-youtube fw-normal"></i></a>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
-     
-
 
     {% block container %}
     {% endblock container %}
 
-   
-
     <!-- Vendor Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="container py-5 mb-5">
-        <div class="bg-white">
-            <div class="owl-carousel vendor-carousel">
-                <img src="{% static 'img/vendor-1.jpg' %}" alt="Vendor 1">
-                <img src="{% static 'img/vendor-2.jpg' %}" alt="Vendor 2">
-                <img src="{% static 'img/vendor-3.jpg' %}" alt="Vendor 3">
-                <img src="{% static 'img/vendor-4.jpg' %}" alt="Vendor 4">
-                <img src="{% static 'img/vendor-5.jpg' %}" alt="Vendor 5">
-                <img src="{% static 'img/vendor-6.jpg' %}" alt="Vendor 6">
-                <img src="{% static 'img/vendor-7.jpg' %}" alt="Vendor 7">
-                <img src="{% static 'img/vendor-8.jpg' %}" alt="Vendor 8">
-                <img src="{% static 'img/vendor-9.jpg' %}" alt="Vendor 9">
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="{% static 'img/vendor-1.jpg' %}" alt="Vendor 1">
+                    <img src="{% static 'img/vendor-2.jpg' %}" alt="Vendor 2">
+                    <img src="{% static 'img/vendor-3.jpg' %}" alt="Vendor 3">
+                    <img src="{% static 'img/vendor-4.jpg' %}" alt="Vendor 4">
+                    <img src="{% static 'img/vendor-5.jpg' %}" alt="Vendor 5">
+                    <img src="{% static 'img/vendor-6.jpg' %}" alt="Vendor 6">
+                    <img src="{% static 'img/vendor-7.jpg' %}" alt="Vendor 7">
+                    <img src="{% static 'img/vendor-8.jpg' %}" alt="Vendor 8">
+                    <img src="{% static 'img/vendor-9.jpg' %}" alt="Vendor 9">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Vendor End -->
+    <!-- Vendor End -->
 
     <!-- Footer Start -->
-     {% include "footer.html" %}
-
-    
-
+    {% include "footer.html" %}
+    <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{% static 'lib/wow/wow.min.js' %}"></script>
-<script src="{% static 'lib/easing/easing.min.js' %}"></script>
-<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
-<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
-<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
-<!-- Template Javascript -->
-<script src="{% static 'js/main.js' %}"></script>
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
