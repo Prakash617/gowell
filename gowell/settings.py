@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j3@wkhzneen*m^%bf@2eyc%&7rad73$ht#km8%jffcl1a-%a6x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['gowell.edu.np','127.0.0.1']
 
@@ -119,12 +119,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Additional static files settings
-STATICFILES_DIRS = [
+if DEBUG:
+    # Additional static files settings
+    STATICFILES_DIRS = [
     BASE_DIR / 'static',
-]
+    ]
+else:
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
 
 # STATICFILES_FINDERS = [
 #     'django.contrib.staticfiles.finders.FileSystemFinder',
