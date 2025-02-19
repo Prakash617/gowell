@@ -51,12 +51,12 @@
                         <div class="team-item bg-light rounded overflow-hidden">
                             <div class="team-img position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="{{ member.photo.url }}" alt="{{ member.name }}">
-                                <div class="team-social">
+                                {% comment %} <div class="team-social">
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{ member.twitter }}"><i class="fab fa-twitter fw-normal"></i></a>
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{ member.facebook }}"><i class="fab fa-facebook-f fw-normal"></i></a>
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{ member.instagram }}"><i class="fab fa-instagram fw-normal"></i></a>
                                     <a class="btn btn-lg btn-primary btn-lg-square rounded" href="{{ member.linkedin }}"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                             <div class="text-center py-4">
                                 <h4 class="text-primary">{{ member.name }}</h4>
