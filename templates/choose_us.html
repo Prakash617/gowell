@@ -1,0 +1,165 @@
+{% load static %}
+{% block style %}
+<style>
+.choose-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.choose-item:hover {
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+.choose-img {
+  transition: transform 0.5s ease;
+  object-fit: cover;
+  height: 500px;
+  width: 100%;
+  display: block;
+}
+
+.choose-item:hover .choose-img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+.choose-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.choose-item:hover .choose-overlay {
+  opacity: 1;
+}
+
+.choose-short-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.choose-item:hover .choose-short-text {
+  opacity: 0;
+}
+
+.choose-overlay h4 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.choose-overlay p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+</style>
+{% endblock style %}
+
+<!-- Why Choose Us Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container py-5">
+    <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+      <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
+      <h1 class="mb-0">Trusted Consultancy for Your Japan Study & Career Journey</h1>
+    </div>
+    <div class="row g-4">
+
+      <!-- 1st Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service1.jpeg' %}" alt="Free language class" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">Free language class</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">Free language class</h4>
+            <p class="text-white mb-0">Join our free language classes to master Japanese effectively and confidently.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2nd Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service2.jpeg' %}" alt="High visa success rate" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">High visa success rate</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">High visa success rate</h4>
+            <p class="text-white mb-0">We maintain an excellent visa approval record to give you peace of mind.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service3.jpeg' %}" alt="Farewell Program" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">Farewell Program</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">Farewell Program</h4>
+            <p class="text-white mb-0">Celebrate your achievements with our warm farewell programs before you leave.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4th Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.8s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service4.jpeg' %}" alt="Picnic program" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">Picnic program</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">Picnic program</h4>
+            <p class="text-white mb-0">Enjoy fun and relaxing picnic programs that foster community and friendship.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5th Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="1s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service5.jpeg' %}" alt="Welcoming Guest" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">Welcoming Guest</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">Welcoming Guest</h4>
+            <p class="text-white mb-0">We warmly welcome guests and dignitaries to share insights and motivation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6th Item -->
+      <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="1.2s">
+        <div class="choose-item position-relative rounded overflow-hidden">
+          <img src="{% static 'img/service6.jpeg' %}" alt="Interview preparation" class="img-fluid w-100 choose-img">
+          <div class="choose-short-text">Interview preparation</div>
+          <div class="choose-overlay d-flex flex-column justify-content-center align-items-center text-center px-3">
+            <h4 class="text-white mb-2">Interview preparation</h4>
+            <p class="text-white mb-0">Get ready for your interviews with expert coaching and practice sessions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Why Choose Us End -->
