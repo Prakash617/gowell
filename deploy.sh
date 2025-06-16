@@ -5,7 +5,7 @@ pip freeze > requirements.txt
 
 git add .
 git commit -m "Deploy to gowell.edu.np"
-git push origin main
+git push origin dynamic
 
 echo "🔐 Connecting to server via SSH..."
 
@@ -20,7 +20,7 @@ source /home3/prakash2/virtualenv/gowell.edu.np/3.11/bin/activate
 cd /home3/prakash2/gowell.edu.np
 
 # Install/update Python dependencies only if requirements.txt changed
-git pull origin main
+git pull origin dynamic
 if [ requirements.txt -nt .requirements_installed ]; then
     echo "📦 Installing/updating requirements..."
     pip install -r requirements.txt
