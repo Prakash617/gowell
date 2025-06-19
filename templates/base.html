@@ -18,7 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -54,24 +55,17 @@
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    {% if company.twitter %}
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.twitter }}" target="_blank"><i class="fab fa-twitter fw-normal"></i></a>
-                    {% endif %}
-                    {% if company.facebook %}
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.facebook }}" target="_blank"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    {% endif %}
-                    {% if company.linkedin %}
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.linkedin }}" target="_blank"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    {% endif %}
-                    {% if company.instagram %}
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="{{ company.instagram }}" target="_blank"><i class="fab fa-instagram fw-normal"></i></a>
-                    {% endif %}
-                    {% if company.youtube %}
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="{{ company.youtube }}" target="_blank"><i class="fab fa-youtube fw-normal"></i></a>
-                    {% endif %}
-                </div>
-            </div>
+    <div class="d-inline-flex align-items-center" style="height: 45px;">
+        {% for link in company.social_links.all %}
+    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+       href="{{ link.url }}" target="_blank" title="{{ link.platform }}">
+        {{ link.icon_class|safe }}
+    </a>
+{% endfor %}
+
+    </div>
+</div>
+
         </div>
     </div>
     <!-- Topbar End -->

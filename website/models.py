@@ -98,8 +98,9 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
-from django.db import models
-
+# -----------------------------
+# Company Information
+# -----------------------------
 class CompanyInfo(models.Model):
     name = models.CharField(max_length=255, default="GoWell Consultancy")
     logo = models.ImageField(upload_to="company/", blank=True, null=True)
@@ -108,11 +109,21 @@ class CompanyInfo(models.Model):
     email = models.EmailField(default="info@gowell.edu.np")
     about = models.TextField(blank=True, null=True)
 
-    # Social Media Links
-    facebook = models.URLField(blank=True, null=True)
-    twitter = models.URLField(blank=True, null=True)
-    instagram = models.URLField(blank=True, null=True)
-    linkedin = models.URLField(blank=True, null=True)
-
     def __str__(self):
         return self.name
+
+
+# -----------------------------
+# Dynamic Social Media Links
+# -----------------------------
+class SocialMediaLink(models.Model):
+    company = models.ForeignKey(CompanyInfo, on_delete=models.CASCADE, related_name="social_links")
+    platform = models.CharField(max_length=50)  # e.g., Twitter, Facebook
+    url = models.URLField()
+    icon_class = models.CharField(
+        max_length=100,
+        help_text="Font Awesome class, e.g., 'fab fa-twitter fw-normal'"
+    )
+
+    def __str__(self):
+        return f"{self.platform} - {self.url}"
