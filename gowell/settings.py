@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j3@wkhzneen*m^%bf@2eyc%&7rad73$ht#km8%jffcl1a-%a6x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
+DEBUG = os.getenv("DEBUG", "False").strip().lower() in ("true", "1", "yes")
 
 ALLOWED_HOSTS = ['gowell.edu.np','127.0.0.1']
 
