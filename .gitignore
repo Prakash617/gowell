@@ -23,7 +23,7 @@ staticfiles/
 .env.*
 
 # Django migrations
-migrations/
+# migrations/
 
 # Test coverage reports
 coverage.xml
